@@ -2,5 +2,11 @@
 {% block content %}
 
 <b><h1>{{current}}</h1></b>
+{% for todo in todos %}
+
+<a href="{% url 'view_todo' todo.id %}"><h3>{{todo.title}}</h3></a>
+  {{todo.important}}
+
+{%endfor%}
 
 {% endblock %}

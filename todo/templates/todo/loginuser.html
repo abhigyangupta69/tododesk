@@ -3,13 +3,15 @@
 <!--<html>-->
 <!--<head>-->
     <link rel="stylesheet" href="{% static 'todo/loginuser.css' %}">
-{{error}}
+
 <div class="login-page">
   <div class="form">
-    <form action="{%url 'loginuser' %}" class="login-form" method="post">
+    <form action="{% url 'loginuser' %}" class="login-form" method="post">
       {% csrf_token %}
-      <input type="text" placeholder="username" name="username"/>
-      <input type="password" placeholder="password" name="password"/>
+      {{error}}
+      <input type="text" placeholder="username" name="loginusername"/>
+      <input type="text" placeholder="email" name="email"/>
+      <input type="password" placeholder="password" name="loginuserpassword"/>
       <button type="submit">login</button>
       <p class="message">Not registered? <a href="{%url 'signupuser' %}">Create an account</a></p>
     </form>

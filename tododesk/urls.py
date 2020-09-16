@@ -20,8 +20,11 @@ from todo import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
-    path('signupuser/', views.signupuser,name='signupuser'),
-    path('logoutuser/', views.logoutuser,name='logoutuser'),
-    path('loginuser/', views.loginuser,name='loginuser'),
+    path('create/', views.createtodos, name='createtodos'),
+    path('signup/', views.signupuser,name='signupuser'),
+    path('logout/', views.logoutuser,name='logoutuser'),
+    path('login/', views.loginuser,name='loginuser'),
     path('current/', views.currenttodos,name='currenttodos'),
+    path('todo/<int:todo_id>/', views.view_todo, name='view_todo'),
+
 ]
